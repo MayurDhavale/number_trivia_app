@@ -1,0 +1,4 @@
+
+
+@GenerateMocks([InternetConnectionChecker])
+
