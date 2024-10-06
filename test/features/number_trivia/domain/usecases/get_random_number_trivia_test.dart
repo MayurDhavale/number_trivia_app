@@ -33,6 +33,7 @@ void main() {
       expect(result, const Right(tNumberTrivia));
 
       verify(mockNumberTriviaRepository.getRandomNumberTrivia());
+      verifyNoMoreInteractions(mockNumberTriviaRepository);
     },
   );
 }
