@@ -10,5 +10,3 @@ class NoPrams extends Equatable {
   @override
   List<Object?> get props => [];
 }
-
-

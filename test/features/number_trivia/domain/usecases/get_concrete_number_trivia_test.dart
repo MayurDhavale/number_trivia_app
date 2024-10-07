@@ -32,5 +32,4 @@ void main() {
 
     verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
   });
-
 }
