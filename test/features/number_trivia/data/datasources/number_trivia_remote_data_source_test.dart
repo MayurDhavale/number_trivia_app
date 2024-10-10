@@ -21,7 +21,7 @@ void main() {
   });
 
   group('getConcreteNumberTrivia', () {
-    final tNumber = 1;
+    const tNumber = 1;
     final tNumberTriviaModel =
         NumberTriviaModel.fromJson(json.decode(fixture('trivia.json')));
 

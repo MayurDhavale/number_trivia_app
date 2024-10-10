@@ -3,8 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../../domain/entities/number_trivia.dart';
 
 class NumberTriviaModel extends NumberTrivia {
-  const NumberTriviaModel({required int number, required String text})
-      : super(text: text, number: number);
+  const NumberTriviaModel({required super.number, required super.text});
 
   factory NumberTriviaModel.fromJson(Map<String, dynamic> json) {
     return NumberTriviaModel(

@@ -50,7 +50,7 @@ void main() {
   }
 
   group('getConcreteNumberTrivia', () {
-    final tNumber = 1;
+    const tNumber = 1;
     final tNumberTriviaModel =
         NumberTriviaModel(number: tNumber, text: 'test trivia');
     final NumberTrivia tNumberTrivia = tNumberTriviaModel;
@@ -168,7 +168,7 @@ void main() {
 
   group('getRandomNumberTrivia', () {
     final tNumberTriviaModel =
-        NumberTriviaModel(number: 123, text: 'test trivia');
+        const NumberTriviaModel(number: 123, text: 'test trivia');
 
     final NumberTrivia tNumberTrivia = tNumberTriviaModel;
 

@@ -18,12 +18,12 @@ void main(){
       () async{
 
         //arrange
-          final str = '1';
+          const str = '1';
 
         //act
           final result = inputConverter.stringToUnsignedInteger(str);
         //assert
-          expect(result,  Right(1));
+          expect(result,  const Right(1));
       });
 
 

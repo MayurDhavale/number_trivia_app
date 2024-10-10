@@ -25,7 +25,7 @@ void main() {
   group('getLastNumberTrivia', () {
     final tNumberTriviaModel =
         NumberTriviaModel.fromJson(json.decode(fixture('trivia_cached.json')));
-    final cacheKey = "CACHED_NUMBER_TRIVIA";
+    const cacheKey = "CACHED_NUMBER_TRIVIA";
     test(
       "should return numberTrivia from SharedPreferences when there is one in the cache ",
       () async {
@@ -53,14 +53,14 @@ void main() {
         final call = dataSourceImpl.getLastNumberTrivia;
 
         //assert
-        expect(() => call(), throwsA(TypeMatcher<CacheException>()));
+        expect(() => call(), throwsA(const TypeMatcher<CacheException>()));
       },
     );
   });
 
   group('cacheNumberTrivia', () {
     final tNumberTriviaModel =
-        NumberTriviaModel(number: 1, text: 'test trivia');
+        const NumberTriviaModel(number: 1, text: 'test trivia');
 
     test(
       "should call SharedPrefrences to cache the data",
