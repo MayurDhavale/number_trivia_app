@@ -43,6 +43,7 @@ dependencies:
   http: ^1.2.2
   #Local cache
   shared_preferences: ^2.3.2
+  get_it: ^8.0.0
   
  
 
