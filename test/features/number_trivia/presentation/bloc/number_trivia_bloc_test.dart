@@ -171,7 +171,7 @@ void main() {
   group('getRandomNumberTrivia',
   () {
     final tNumberTrivia =
-        NumberTrivia(text: 'test trivia', number: 1);
+        const NumberTrivia(text: 'test trivia', number: 1);
 
         void setMockGetRandomNumberSucess() => when(mockGetRandomNumberTrivia(any)).thenAnswer((_) async => Right(tNumberTrivia));
 

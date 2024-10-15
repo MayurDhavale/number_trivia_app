@@ -14,34 +14,40 @@ import 'package:http/http.dart' as http;
 
 final sl = GetIt.instance;
 
-Future<void> init() async{
-
+Future<void> init() async {
   //! Features - number trivia
-  //Bloc 
-  sl.registerFactory(() => NumberTriviaBloc(getConcreteNumberTrivia: sl(), getRandomNumberTrivia: sl(), inputConverter: sl()) );
+  //Bloc
+  sl.registerFactory(() => NumberTriviaBloc(
+      getConcreteNumberTrivia: sl(),
+      getRandomNumberTrivia: sl(),
+      inputConverter: sl()));
 
   //Usecases
 
   sl.registerLazySingleton(() => GetConcreteNumberTrivia(sl()));
-  sl.registerLazySingleton(() => GetRandomNumberTrivia(repository:sl() ));
-  
-  //repository 
-  sl.registerLazySingleton<NumberTriviaRepository>(() => NumberTriviaRepositoryImpl(remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+  sl.registerLazySingleton(() => GetRandomNumberTrivia(repository: sl()));
+
+  //repository
+  sl.registerLazySingleton<NumberTriviaRepository>(() =>
+      NumberTriviaRepositoryImpl(
+          remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+
   // datasources
-  sl.registerLazySingleton<NumberTriviaRemoteDataSource>(() => NumberTriviaRemoteDataSourceImpl(client: sl()));
+  sl.registerLazySingleton<NumberTriviaRemoteDataSource>(
+      () => NumberTriviaRemoteDataSourceImpl(client: sl()));
 
-  sl.registerLazySingleton<NumberTriviaLocalDataSource>(() => NumberTriviaLocalDataSourceImpl(sharedPreferences: sl()));
+  sl.registerLazySingleton<NumberTriviaLocalDataSource>(
+      () => NumberTriviaLocalDataSourceImpl(sharedPreferences: sl()));
+      
   //! core
-  sl.registerLazySingleton(() =>InputConverter());
+  sl.registerLazySingleton(() => InputConverter());
 
-  sl.registerLazySingleton<NetworkInfo>(() =>NetworkInfoImpl(internetConnectionChecker: sl()));
+  sl.registerLazySingleton<NetworkInfo>(
+      () => NetworkInfoImpl(internetConnectionChecker: sl()));
 
   //!External Dependencies
   final sharedPrefrences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPrefrences);
-  sl.registerLazySingleton(() =>http.Client());
+  sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
-  
-
-
 }

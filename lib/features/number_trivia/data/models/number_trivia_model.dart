@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 
 import '../../domain/entities/number_trivia.dart';
 
